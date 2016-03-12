@@ -27,6 +27,6 @@ function move(marker){
       clearTimeout(automate);
     }
 
-  }, 1000);
+  }, 800);
 
 }
