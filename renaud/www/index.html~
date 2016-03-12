@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>test</title>
+</head>
+<body>
+<p id='test'>texte a modifier</p>
+    <input type='button' onClick='request(readData)' value='modifier'>
+    <script type="text/javascript" src="js/oXHR.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/LectureAjax.js"></script>
+</body>
+</html>

@@ -8,25 +8,17 @@ function move(marker){
   var long = '';
   var i = 0;
   var checkpoint_number = tracks.length;
-  console.log(checkpoint_number);
 
   var automate = setInterval(function() {
-    console.log(i);
     lat = tracks[i][0];
     long = tracks[i][1];
-    console.log('lat');
-    console.log(lat);
-    console.log('long');
-    console.log(long);
     var newLatLng = new L.LatLng(lat, long);
     marker.setLatLng(newLatLng);
     i = i+1;
-    console.log('i');
-    console.log(i);
     if(i == checkpoint_number){
       clearTimeout(automate);
     }
 
-  }, 1000);
+  }, 800);
 
 }
