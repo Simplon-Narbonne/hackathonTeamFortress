@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:800" rel="stylesheet" type="text/css" >
+
+    <!-- Include the compiled Ratchet CSS -->
+    <link rel="stylesheet" href="./css/ratchet.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="leaflet/leaflet.css" />
+    <style>
+			#map {
+				height: 100%;
+			}
+		</style>
+
+    <!-- Include the compiled Ratchet JS -->
+    <script src="./js/ratchet.js"></script>
+    <script src="./js/ratchet.min.js"></script>
+    <script src="leaflet/leaflet.js"></script>
+    <script language="javascript">
+			function init() {
+				var map = new L.Map('map', {
+					center : [43.206454, 2.364104],
+					zoom : 13
+				});
+				L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+					attribution : '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
+					maxZoom : 30
+				}).addTo(map);
+				map.attributionControl.setPrefix('');
+				// Don't show the 'Powered by Leaflet' text.
+
+				var tracks = [new Array(43.205400, 2.362688), new Array(43.205663, 2.362846), new Array(43.205857, 2.363033), new Array(43.206117, 2.363249), new Array(43.206138, 2.363301), new Array(43.206492, 2.363391), new Array(43.206673, 2.363769), new Array(43.206816, 2.364094), new Array(43.207207, 2.364126), new Array(43.207432, 2.364204), new Array(43.207475, 2.364395), new Array(43.207875, 2.364369), new Array(43.208104, 2.364375)];
+
+				//Define an array for store checkpoints
+				var polylinePoints = new Array();
+
+				//Define an array of Latlng objects (points along the line)
+				for (var i = 0; i < tracks.length; i++) {
+					polylinePoints[i] = new L.LatLng(tracks[i][0], tracks[i][1]);
+				}
+
+				//Define an array of Latlng objects (points along the line)
+				var polylineOptions = {
+					color : 'blue',
+					weight : 6,
+					opacity : 0.6
+				};
+
+				var polyline = new L.Polyline(polylinePoints, polylineOptions);
+
+				map.addLayer(polyline);
+
+				// zoom the map to the polyline
+				map.fitBounds(polyline.getBounds());
+
+				// Add and custom icon for the marker
+				var myIcon = L.icon({
+					iconUrl : 'images/pas.png',
+					iconSize : [33, 45],
+					/*
+					 popupAnchor: [-3, -76],
+					 shadowUrl: 'my-icon-shadow.png',
+					 shadowRetinaUrl: 'my-icon-shadow@2x.png',
+					 shadowSize: [68, 95],
+					 shadowAnchor: [22, 94]
+					 */
+				});
+
+				// Add a marker to the map
+				var marker = L.marker([43.205400, 2.362688]).addTo(map);
+				var lat = "43.205663";
+				var long = "2.362846";
+
+				// Runner Simulation
+				move(marker);
+
+			}
+		</script>
+  </head>
+  <body onLoad="javascript:init();">
+    <header id="header" class="bar bar-nav fond tac">
+      <a  href="index.html" data-transition="fade"><img id="nom" src="./img/nomblanc.png" alt="" /></a>
+      <a href="#menu-haut"><span class="icon icon icon-bars pull-right "></span></a>
+    </header>
+
+
+<div class="content ">
+  
+  <div id="map"></div>
+
+  <script src="js/move_runner.js"></script>
+  <script src="js/chrono.js"></script>
+  <script src="js/checkpoint.js"></script>
+
+</div><!--end content-->
+
+
+<script type="text/javascript">
+//centrage div:
+$(document).ready(function() {
+// $(window).resize() est appelée chaque fois que la fenêtre est redimensionnée par l'utilisateur.
+  $(window).resize(function() {
+    $(".middle").css({
+      position:'absolute',
+      left:($(window).width() - $(".middle").outerWidth()) / 2,
+      top:($(window).height() - $(".middle").outerHeight()) / 2
+    });
+  });
+});
+
+$(window).load(function() {
+  // au chargement complet de la page, la fonction resize() est appelée une fois pour initialiser le centrage.
+  $(window).resize();
+});
+
+</script>
+  </body>
+
+</html>
