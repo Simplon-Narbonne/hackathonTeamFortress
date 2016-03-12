@@ -22,28 +22,28 @@
   </head>
   <body>
     <header id="header" class="bar bar-nav fond tac">
-      <img id="nom" src="./img/nomblanc.png" alt="" />
+      <a  href="index.html" data-transition="fade"><img id="nom" src="./img/nomblanc.png" alt="" /></a>
       <a href="#menu-haut"><span class="icon icon icon-bars pull-right fond "></span></a>
     </header>
 <div class="content ">
-  <div id="login" class="">
-          <div id="menu-haut" class="popover">
-              <header class="bar bar-nav ">
-                <h1 class="title coltxt">MENU</h1>
-              </header>
-                <nav class="table-view ">
-                  <a href="index.html"><li class="table-view-cell coltxt">Accueil</li></a>
-                  <a href="#"><li class="table-view-cell coltxt">Aide</li></a>
-                      </nav>
-                </div >
-          </div><!--end menu haut-->
-          <form class="tac ">
-            <label for="">Entrez votre nom</label>
-            <input type="text" placeholder="Nom">
-            <a  href="parcours.html" data-transition="fade"><button class="btn btn-positive btn-block">Valider</button></a>
-          </form>
-</div>
-
+    <div id="login" class="">
+      <div id="menu-haut" class="popover">
+          <header class="bar bar-nav ">
+            <h1 class="title coltxt">MENU</h1>
+          </header>
+            <nav class="table-view ">
+              <a href="index.html"><li class="table-view-cell coltxt">Accueil</li></a>
+              <a href="#"><li class="table-view-cell coltxt">Aide</li></a>
+                  </nav>
+            </div >
+        </div><!--end menu haut-->
+            <form method="post"class="tac coltxt ma tac" action="page1.php">
+              <h3>Entrez votre nom</h3>
+              <input  type="text" placeholder="Nom">
+              <a href="parcours.html" data-transition="fade"><button type="submit" id="bouton"class="ma fond">Valider</button></a>
+            </form>
+    </div>
+</div><!--end content-->
 <script type="text/javascript">
 //centrage div:
 $(document).ready(function() {

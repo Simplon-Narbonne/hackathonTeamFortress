@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <title>Appli hackathon</title>
+    <title>Run</title>
 
     <!-- Sets initial viewport load and disables zooming  -->
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
@@ -21,27 +21,36 @@
     <script src="./js/ratchet.min.js"></script>
   </head>
   <body>
-    <header id="header" class="bar bar-nav fondb tac">
-      <img id="nom" src="./img/nom.png" alt="" />
-      <a href="#menu-haut"><span class="icon icon icon-bars pull-right "></span></a>
+      <header id="header" class="bar bar-nav fond tac">
+        <a  href="index.html" data-transition="fade"><img id="nom" src="./img/nomblanc.png" alt="" /></a>
+      <a href="#menu-haut"><span class="icon icon icon-bars pull-right fond"></span></a>
     </header>
 <div class="content ">
-        <div id="intro" class="fond">
-                <div id="menu-haut" class="popover">
-                    <header class="bar bar-nav ">
-                      <h1 class="title coltxt">MENU</h1>
-                    </header>
-                      <nav class="table-view ">
-                        <a href="index.html"><li class="table-view-cell coltxt">Accueil</li></a>
-                        <a href="#"><li class="table-view-cell coltxt">Aide</li></a>
-                            </nav>
-                      </div >
-                      <div>
-                          <a  href="login.html" data-transition="fade"><img id="logo"  src="./img/bouclier.png" alt=""></a>
-                      </div>
-              </div><!--end menu haut-->
-        </div>
-</div>
+  <div id="options">
+      <div id="menu-haut" class="popover">
+        <header class="bar bar-nav ">
+          <h1 class="title coltxt">MENU</h1>
+        </header>
+          <nav class="table-view ">
+            <a href="index.html"><li class="table-view-cell coltxt">Accueil</li></a>
+            <a href="#"><li class="table-view-cell coltxt">Aide</li></a>
+                </nav>
+      </div >
+
+                  <div id="run">
+
+
+
+
+
+
+
+
+                  </div>
+    </div><!--end options-->
+</div><!--end content-->
+
+
 <script type="text/javascript">
 //centrage div:
 $(document).ready(function() {
@@ -59,6 +68,7 @@ $(window).load(function() {
   // au chargement complet de la page, la fonction resize() est appelée une fois pour initialiser le centrage.
   $(window).resize();
 });
+
 
 </script>
   </body>

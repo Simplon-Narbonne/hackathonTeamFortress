@@ -199,9 +199,17 @@ margin-top: 5px;
   background-color:#fafafa ;
   padding: 10px;
 }
-#login input{
-  width: 90%;
-}
-#login{
+
+form{
   padding-top: 80px;
+    width: 80%;
+}
+form a{
+color: #fff;
+}
+
+#bouton{
+  width: 40%;
+  padding: 10px 20px;
+  border: none;
 }
