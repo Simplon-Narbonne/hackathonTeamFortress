@@ -5,7 +5,8 @@
     <title>carcassonne</title>
 	<script type="text/javascript">
 	var trajUn =[ // Latitude | Longitude
-		[43.205338,2.362688],
+	
+	/*	[43.205338,2.362688],
 		[43.205663,2.362846],
 		[43.205857,2.363033],
 		[43.206117,2.363249],
@@ -17,7 +18,9 @@
 		[43.207432,2.364204],
 		[43.207475,2.364395],
 		[43.207875,2.364369],
-		[43.205466,2.362723]
+		[43.205466,2.362723] */
+		[43.209455399999996,2.3648979],
+		[43.209455399999996,2.3648979]
 	];
 	var unTronc =[];
 
@@ -39,19 +42,16 @@
 				if (unTronc[i][0] == latiTronc && unTronc[i][1] == longiTronc) {
 					trajUn.splice([i], 1);
 				}
-		//		console.log(unTronc);
-				
-				console.log(unTronc[i][0]+" = "+latiTronc);
-			//	console.log(unTronc[i]);
-				
-				
+				console.log(unTronc[i][0]+" "+latiTronc);
+				console.log(unTronc[i][1]+" "+longi);
 			}
 		}
 		else {
 			clearTimeout(compte);
+			var ajax = minu+":"+secon+":"+centi;
+			console.log(ajax);
 		}
 	}
-	
 	var centi=0; // initialise les dixtièmes
 	var secon=0; //initialise les secondes
 	var minu=0; //initialise les minutes
