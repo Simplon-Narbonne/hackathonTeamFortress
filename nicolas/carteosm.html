@@ -26,9 +26,16 @@
           });
       	 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
-            maxZoom: 18
+            maxZoom: 30
          }).addTo(map);
          map.attributionControl.setPrefix(''); // Don't show the 'Powered by Leaflet' text.
+
+         // Au début aucun checkpoint de franchi, à incrémenter dès que les coordonnées GPS de l'user rentre dans la zone du checkpoint
+         var checkpoint = 0;
+
+         var arr = [new Array(43.205663, 2.362846), new Array(43.205857, 2.363033)];
+         //var valeur = arr[1][0];
+         //alert(valeur);
 
          //Define an array of Latlng objects (points along the line)
          var polylinePoints = [
@@ -59,6 +66,54 @@
 
          // zoom the map to the polyline
          map.fitBounds(polyline.getBounds());
+
+         var myIcon = L.icon({
+             iconUrl: 'images/pas.png',
+             iconSize: [33, 45],
+             /*
+             popupAnchor: [-3, -76],
+             shadowUrl: 'my-icon-shadow.png',
+             shadowRetinaUrl: 'my-icon-shadow@2x.png',
+             shadowSize: [68, 95],
+             shadowAnchor: [22, 94]
+             */
+         });
+
+         var marker = L.marker([43.205400, 2.362688], {icon: myIcon}).addTo(map);
+         var lat = "43.205663";
+         var long = "2.362846";
+
+         setInterval(function() {
+           var newLatLng = new L.LatLng(lat, long);
+           lat = parseFloat(lat) + parseFloat(0.000300);
+           long = parseFloat(long) + parseFloat(0.000020);
+           console.log('lat');
+           console.log(lat);
+           console.log('long');
+           console.log(long);
+           marker.setLatLng(newLatLng);
+         }, 2000);
+
+         function in_array(needle, haystack, argStrict) {
+          var key = '',
+            strict = !! argStrict;
+          if (strict) {
+            for (key in haystack) {
+              if (haystack[key] === needle) {
+                return true;
+              }
+            }
+          } else {
+            for (key in haystack) {
+              if (haystack[key] == needle) {
+                return true;
+              }
+            }
+          }
+
+          return false;
+        }
+
       }
    </script>
 </head>
