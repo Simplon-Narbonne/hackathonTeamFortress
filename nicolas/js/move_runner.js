@@ -6,7 +6,7 @@ function move(marker){
 
   var lat = '';
   var long = '';
-  var i = 12;
+  var i = 0;
   var checkpoint_number = tracks.length;
   console.log(checkpoint_number);
 
@@ -27,6 +27,6 @@ function move(marker){
       clearTimeout(automate);
     }
 
-  }, 2000);
+  }, 1000);
 
 }
