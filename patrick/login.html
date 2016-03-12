@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:800" rel="stylesheet" type="text/css" >
+
+    <!-- Include the compiled Ratchet CSS -->
+    <link rel="stylesheet" href="./css/ratchet.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Include the compiled Ratchet JS -->
+    <script src="./js/ratchet.js"></script>
+    <script src="./js/ratchet.min.js"></script>
+  </head>
+  <body>
+    <header id="header" class="bar bar-nav fond tac">
+      <img id="nom" src="./img/nomblanc.png" alt="" />
+      <a href="#menu-haut"><span class="icon icon icon-bars pull-right fond "></span></a>
+    </header>
+<div class="content ">
+  <div id="login" class="">
+          <div id="menu-haut" class="popover">
+              <header class="bar bar-nav ">
+                <h1 class="title coltxt">MENU</h1>
+              </header>
+                <nav class="table-view ">
+                  <a href="index.html"><li class="table-view-cell coltxt">Accueil</li></a>
+                  <a href="#"><li class="table-view-cell coltxt">Aide</li></a>
+                      </nav>
+                </div >
+          </div><!--end menu haut-->
+          <form class="tac ">
+            <label for="">Entrez votre nom</label>
+            <input type="text" placeholder="Nom">
+            <a  href="parcours.html" data-transition="fade"><button class="btn btn-positive btn-block">Valider</button></a>
+          </form>
+</div>
+
+<script type="text/javascript">
+//centrage div:
+$(document).ready(function() {
+// $(window).resize() est appelée chaque fois que la fenêtre est redimensionnée par l'utilisateur.
+  $(window).resize(function() {
+    $(".middle").css({
+      position:'absolute',
+      left:($(window).width() - $(".middle").outerWidth()) / 2,
+      top:($(window).height() - $(".middle").outerHeight()) / 2
+    });
+  });
+});
+
+$(window).load(function() {
+  // au chargement complet de la page, la fonction resize() est appelée une fois pour initialiser le centrage.
+  $(window).resize();
+});
+
+</script>
+  </body>
+
+</html>
