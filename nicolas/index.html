@@ -1,87 +1,104 @@
 <html>
-<head>
-   <title>Leaflet Polyline Example</title>
+	<head>
+		<title>Leaflet Polyline Example</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link rel="stylesheet" href="leaflet/leaflet.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="leaflet/leaflet.ie.css" /><![endif]-->
 
-   <link rel="stylesheet" href="leaflet/leaflet.css" />
-   <!--[if lte IE 8]><link rel="stylesheet" href="leaflet/leaflet.ie.css" /><![endif]-->
+		<script src="leaflet/leaflet.js"></script>
 
-   <script src="leaflet/leaflet.js"></script>
+		<style>
+			html, body {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			#map {
+				height: 100%;
+			}
+		</style>
 
-   <style>
-     html, body {
-       height: 100%;
-       margin: 0;
-       padding: 0;
-     }
-     #map {
-       height: 100%;
-     }
-   </style>
+		<script language="javascript">
+			function init() {
+				var map = new L.Map('map', {
+					center : [43.206454, 2.364104],
+					zoom : 13
+				});
+				L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+					attribution : '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
+					maxZoom : 30
+				}).addTo(map);
+				map.attributionControl.setPrefix('');
+				// Don't show the 'Powered by Leaflet' text.
 
-   <script language="javascript">
-      function init() {
-         var map = new L.Map('map', {
-              center: [43.206454, 2.364104],
-              zoom: 13
-          });
-      	 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
-            maxZoom: 30
-         }).addTo(map);
-         map.attributionControl.setPrefix(''); // Don't show the 'Powered by Leaflet' text.
+				var tracks = [new Array(43.205400, 2.362688), new Array(43.205663, 2.362846), new Array(43.205857, 2.363033), new Array(43.206117, 2.363249), new Array(43.206138, 2.363301), new Array(43.206492, 2.363391), new Array(43.206673, 2.363769), new Array(43.206816, 2.364094), new Array(43.207207, 2.364126), new Array(43.207432, 2.364204), new Array(43.207475, 2.364395), new Array(43.207875, 2.364369), new Array(43.208104, 2.364375)];
 
-         var tracks = [new Array(43.205400, 2.362688), new Array(43.205663, 2.362846), new Array(43.205857, 2.363033), new Array(43.206117, 2.363249), new Array(43.206138, 2.363301), new Array(43.206492, 2.363391), new Array(43.206673, 2.363769), new Array(43.206816, 2.364094), new Array(43.207207, 2.364126), new Array(43.207432, 2.364204), new Array(43.207475, 2.364395), new Array(43.207875, 2.364369), new Array(43.208104, 2.364375)];
+				//Define an array for store checkpoints
+				var polylinePoints = new Array();
 
-         //Define an array for store checkpoints
-         var polylinePoints = new Array();
+				//Define an array of Latlng objects (points along the line)
+				for (var i = 0; i < tracks.length; i++) {
+					polylinePoints[i] = new L.LatLng(tracks[i][0], tracks[i][1]);
+				}
 
-         //Define an array of Latlng objects (points along the line)
-         for (var i = 0; i < tracks.length; i++) {
-           polylinePoints[i] = new L.LatLng(tracks[i][0], tracks[i][1]);
-         }
+				//Define an array of Latlng objects (points along the line)
+				var polylineOptions = {
+					color : 'blue',
+					weight : 6,
+					opacity : 0.6
+				};
 
-         //Define an array of Latlng objects (points along the line)
-         var polylineOptions = {
-               color: 'blue',
-               weight: 6,
-               opacity: 0.6
-             };
+				var polyline = new L.Polyline(polylinePoints, polylineOptions);
 
-         var polyline = new L.Polyline(polylinePoints, polylineOptions);
+				map.addLayer(polyline);
 
-         map.addLayer(polyline);
+				// zoom the map to the polyline
+				map.fitBounds(polyline.getBounds());
 
-         // zoom the map to the polyline
-         map.fitBounds(polyline.getBounds());
+				// Add and custom icon for the marker
+				var myIcon = L.icon({
+					iconUrl : 'images/pas.png',
+					iconSize : [33, 45],
+					/*
+					 popupAnchor: [-3, -76],
+					 shadowUrl: 'my-icon-shadow.png',
+					 shadowRetinaUrl: 'my-icon-shadow@2x.png',
+					 shadowSize: [68, 95],
+					 shadowAnchor: [22, 94]
+					 */
+				});
 
-         // Add and custom icon for the marker
-         var myIcon = L.icon({
-             iconUrl: 'images/pas.png',
-             iconSize: [33, 45],
-             /*
-             popupAnchor: [-3, -76],
-             shadowUrl: 'my-icon-shadow.png',
-             shadowRetinaUrl: 'my-icon-shadow@2x.png',
-             shadowSize: [68, 95],
-             shadowAnchor: [22, 94]
-             */
-         });
+				// Add a marker to the map
+				var marker = L.marker([43.205400, 2.362688]).addTo(map);
+				var lat = "43.205663";
+				var long = "2.362846";
 
-         // Add a marker to the map
-         var marker = L.marker([43.205400, 2.362688], {icon: myIcon}).addTo(map);
-         var lat = "43.205663";
-         var long = "2.362846";
+				// Runner Simulation
+				move(marker);
 
-         // Runner Simulation
-         move(marker);
+			}
+		</script>
+	</head>
+	<body onLoad="javascript:init();">
+		<div class="chrono">
+			<form name="forsec">
+				<input type="text" size="3" name="secb">
+				minute(s)
+				<input type="text" size="3" name="seca">
+				secondes
+				<input type="text" size="3" name="secc">
+				dixièmes
 
-      }
-   </script>
-</head>
-<body onLoad="javascript:init();">
-   <div id="map"></div>
+				<input type="button" value="Chrono" onclick="chrono()">
+				<input type="button" value="RaZ" onclick="rasee()">
+				<input type="button" value="Tempo" onclick="clearTimeout(compte)">
+			</form>
+		</div>
+		<div id="map"></div>
 
-<script src="js/move_runner.js"></script>
-
-</body>
+		<script src="js/move_runner.js"></script>
+		<script src="js/chrono.js"></script>
+		<script src="js/checkpoint.js"></script>
+	</body>
 </html>

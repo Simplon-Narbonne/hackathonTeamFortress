@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>Run</title>
 
     <!-- Sets initial viewport load and disables zooming  -->
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
@@ -21,31 +21,37 @@
     <script src="./js/ratchet.min.js"></script>
   </head>
   <body>
-    <header id="header" class="bar bar-nav fond tac">
-      <a  href="index.html" data-transition="fade"><img id="nom" src="./img/nomblanc.png" alt="" /></a>
+      <header id="header" class="bar bar-nav fond tac">
+        <a  href="index.html" data-transition="fade"><img id="nom" src="./img/nomblanc.png" alt="" /></a>
       <a href="#menu-haut"><span class="icon icon icon-bars pull-right "></span></a>
     </header>
 <div class="content ">
-    <div id="login" class="">
+  <div id="options">
       <div id="menu-haut" class="popover">
-          <header class="bar bar-nav ">
-            <h1 class="title coltxt">MENU</h1>
-          </header>
-            <nav class="table-view ">
-              <a href="index.html"><li class="table-view-cell coltxt">Accueil</li></a>
-              <a href="#"><li class="table-view-cell coltxt">Aide</li></a>
-                  </nav>
-            </div >
-        </div><!--end menu haut-->
-            <form class="tac coltxt ma tac" action="#" >
-              <input type="text" class="pseudo_session" placeholder="Entrez votre nom">
-              <button id="bouton" class="ma fond2 submit_login">Valider</button>
-            </form>
-    </div>
+        <header class="bar bar-nav ">
+          <h1 class="title coltxt">MENU</h1>
+        </header>
+          <nav class="table-view ">
+            <a href="index.html"><li class="table-view-cell coltxt">Accueil</li></a>
+            <a href="#"><li class="table-view-cell coltxt">Aide</li></a>
+                </nav>
+      </div >
+
+                  <div id="run">
+
+
+
+
+
+
+
+
+                  </div>
+    </div><!--end options-->
 </div><!--end content-->
+
 <script src="./js/jquery.js" charset="utf-8"></script>
 <script src="js/crud.js"></script>
-
 <script type="text/javascript">
 //centrage div:
 $(document).ready(function() {
@@ -63,6 +69,7 @@ $(window).load(function() {
   // au chargement complet de la page, la fonction resize() est appelée une fois pour initialiser le centrage.
   $(window).resize();
 });
+
 
 </script>
   </body>
