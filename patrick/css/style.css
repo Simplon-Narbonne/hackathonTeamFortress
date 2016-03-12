@@ -37,24 +37,11 @@ body {
 }
 
 .fond2 {
-  background-color: #25d9ff;
+  background-color: #28225c;
 }
 
 .fond {
-  background: -moz-linear-gradient(45deg, rgba(255,0,255,1) 0%, rgba(0,255,255,1) 100%);
- /* ff3.6+ */
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,0,255,1)), color-stop(100%, rgba(0,255,255,1)));
- /* safari4+,chrome */
-  background: -webkit-linear-gradient(45deg, rgba(255,0,255,1) 0%, rgba(0,255,255,1) 100%);
- /* safari5.1+,chrome10+ */
-  background: -o-linear-gradient(45deg, rgba(255,0,255,1) 0%, rgba(0,255,255,1) 100%);
- /* opera 11.10+ */
-  background: -ms-linear-gradient(45deg, rgba(255,0,255,1) 0%, rgba(0,255,255,1) 100%);
- /* ie10+ */
-  background: linear-gradient(45deg, rgba(255,0,255,1) 0%, rgba(0,255,255,1) 100%);
- /* w3c */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffff', endColorstr='#ff00ff',GradientType=1 );
- /* ie6-9 */
+background-color: #28225c;
 }
 
 .fondb {
@@ -174,7 +161,7 @@ margin-top: 5px;
 }
 
 #header {
-		height: 65px;
+		height: auto;
 }
 
 .btn {
