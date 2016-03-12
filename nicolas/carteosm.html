@@ -1,0 +1,69 @@
+<html>
+<head>
+   <title>Leaflet Polyline Example</title>
+
+   <link rel="stylesheet" href="leaflet/leaflet.css" />
+   <!--[if lte IE 8]><link rel="stylesheet" href="leaflet/leaflet.ie.css" /><![endif]-->
+
+   <script src="leaflet/leaflet.js"></script>
+
+   <style>
+     html, body {
+       height: 100%;
+       margin: 0;
+       padding: 0;
+     }
+     #map {
+       height: 100%;
+     }
+   </style>
+
+   <script language="javascript">
+      function init() {
+         var map = new L.Map('map', {
+              center: [43.206454, 2.364104],
+              zoom: 13
+          });
+      	 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
+            maxZoom: 18
+         }).addTo(map);
+         map.attributionControl.setPrefix(''); // Don't show the 'Powered by Leaflet' text.
+
+         //Define an array of Latlng objects (points along the line)
+         var polylinePoints = [
+           new L.LatLng(43.205400, 2.362688),
+           new L.LatLng(43.205663, 2.362846),
+           new L.LatLng(43.205857, 2.363033),
+           new L.LatLng(43.206117, 2.363249),
+           new L.LatLng(43.206138, 2.363301),
+           new L.LatLng(43.206492, 2.363391),
+           new L.LatLng(43.206673, 2.363769),
+           new L.LatLng(43.206816, 2.364094),
+           new L.LatLng(43.207207, 2.364126),
+           new L.LatLng(43.207432, 2.364204),
+           new L.LatLng(43.207475, 2.364395),
+           new L.LatLng(43.207875, 2.364369),
+           new L.LatLng(43.208104, 2.364375)
+         ];
+
+         var polylineOptions = {
+               color: 'blue',
+               weight: 6,
+               opacity: 0.9
+             };
+
+         var polyline = new L.Polyline(polylinePoints, polylineOptions);
+
+         map.addLayer(polyline);
+
+         // zoom the map to the polyline
+         map.fitBounds(polyline.getBounds());
+      }
+   </script>
+</head>
+<body onLoad="javascript:init();">
+   <div id="map"></div>
+
+</body>
+</html>
