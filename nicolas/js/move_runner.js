@@ -10,6 +10,7 @@ function move(marker){
   var checkpoint_number = tracks.length;
 
   var automate = setInterval(function() {
+  	console.log('tada');
     lat = tracks[i][0];
     long = tracks[i][1];
     var newLatLng = new L.LatLng(lat, long);

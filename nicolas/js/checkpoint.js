@@ -36,6 +36,8 @@ function maPosition(position) {
 } else { // on arette timeaout quant tout les chekpoint son passer
 		clearTimeout(refresh);
 		var ajax = minu + ":" + secon + ":" + centi; // cration d'une variable pour envois ajax
+		
+		// ajax a faire pour stocker le temp et afficher le classement
 	}
 }
 var refresh = setInterval(function() {
