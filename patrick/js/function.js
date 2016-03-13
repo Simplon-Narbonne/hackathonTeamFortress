@@ -1,3 +1,3 @@
 $("#logo").click(function(){
-  console.log('ici');
+  window.location.replace("login.html");
 });
