@@ -14,8 +14,10 @@
 
     <!-- Include the compiled Ratchet CSS -->
     <link rel="stylesheet" href="./css/ratchet.css">
+    <link rel="stylesheet" href="./css/sss.css">
     <link rel="stylesheet" href="./css/style.css">
-
+    <script src="./js/sss.js" charset="utf-8"></script>
+    <script src="./js/jquery.js" charset="utf-8"></script>
   </head>
   <body>
     <header id="header" class="bar bar-nav fond tac">
@@ -33,18 +35,21 @@
             <div id="annonce" class="tac ma">
               <img src="./img/annonce.png" alt="">
             </div>
-            <div class="my-slider">
+            <div class="slider tac">
             	<ul>
             		<li><img src="./img/pub2.jpg" alt=""></li>
             		<li><img src="./img/pub.jpg" alt=""></li>
             		<li><img src="./img/pub3.jpg" alt=""></li>
             	</ul>
-            </div>          
+            </div>
     </div>
 </div><!--end content-->
-<script src="./js/jquery.js" charset="utf-8"></script>
-<script src="js/crud.js"></script>
 
+
+
+<script src="./js/sss.js" charset="utf-8"></script>
+<script src="./js/jquery.js" charset="utf-8"></script>
+<script src="./js/crud.js"></script>
 <script type="text/javascript">
 //centrage div:
 $(document).ready(function() {
@@ -63,6 +68,11 @@ $(window).load(function() {
   $(window).resize();
 });
 
+</script>
+<script>
+jQuery(function($) {
+$('.slider').sss();
+});
 </script>
   </body>
 
