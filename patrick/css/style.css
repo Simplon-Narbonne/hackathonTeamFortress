@@ -163,8 +163,12 @@ margin-top: 5px;
 
 #header {
 		height: auto;
+    z-index: 50;
 }
-
+#menu-haut{
+  position: relative;
+  z-index: 300;
+}
 .btn {
   display: inline-block;
   padding: 10px 30px;
@@ -216,6 +220,19 @@ color: #fff;
   width: 40%;
   padding: 10px 20px;
   border: none;
+  color: #fff;
+}
+#pub{
+  width: 90%;
+  height: 200px;
+  border:1px solid #2;
+  margin-top: 50px;
+  background-image: url(../img/pub.jpg);
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  background-position: center;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
 }
 /*============================== Animation ==============*/
 .abi {
