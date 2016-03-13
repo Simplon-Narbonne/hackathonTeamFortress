@@ -28,11 +28,18 @@
 			function init() {
 				var map = new L.Map('map', {
 					center : [43.206454, 2.364104],
-					zoom : 13
+          zoomControl: false,
+					zoom : 17
 				});
+
+        // Disable drag and zoom handlers.
+        map.doubleClickZoom.disable();
+        map.scrollWheelZoom.disable();
+        map.keyboard.disable();
+
 				L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 					attribution : '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
-					maxZoom : 30
+					maxZoom : 17
 				}).addTo(map);
 				map.attributionControl.setPrefix('');
 				// Don't show the 'Powered by Leaflet' text.
@@ -76,7 +83,7 @@
         });
 
         // Add a marker to the map
-        var marker2 = L.marker([43.205400, 2.362688],{icon:myIcon2}).addTo(map);
+        var marker2 = L.marker([43.205700, 2.36300],{icon:myIcon2}).addTo(map);
 
         var myIcon3 = L.icon({
           iconUrl : 'img/flag-red.png',
@@ -84,7 +91,7 @@
         });
 
         // Add a marker to the map
-        var marker2 = L.marker([43.207875, 2.364369],{icon:myIcon3}).addTo(map);
+        var marker2 = L.marker([43.20850, 2.364800],{icon:myIcon3}).addTo(map);
 
 				var lat = "43.205663";
 				var long = "2.362846";
@@ -110,7 +117,7 @@
   <script src="js/move_runner.js"></script>
   <script src="js/chrono.js"></script>
   <script src="js/checkpoint.js"></script>
-    <script src="js/crud.js"></script>
+  <script src="js/crud.js"></script>
 
 </div><!--end content-->
 
