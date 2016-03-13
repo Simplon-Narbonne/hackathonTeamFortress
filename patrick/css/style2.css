@@ -1,5 +1,5 @@
 .bar-nav ~ .content {
-    padding-top: 80px;
+    padding-top: 100px;
 }
 form {
     padding-top: 20px;
@@ -19,4 +19,26 @@ form {
 #annonce img {
     margin-top: 5%;
     width: 90%;
+}
+
+
+.liste_scores{
+
+  width: 80%;
+
+  padding: 15%;
+
+  margin-top: 40px;
+
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+
+  background-color: #28225c;
+
+  color: #fdc317;
+
+  border-top: 10px solid #fdc317;
+
+}
+.retour a{
+  display: block;
 }

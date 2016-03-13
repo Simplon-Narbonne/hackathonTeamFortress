@@ -64,6 +64,8 @@ function move(marker){
     i = i+1;
     if(i == checkpoint_number){
       clearTimeout(automate);
+      // Scores
+      window.location.replace("score.html");
     }
 
   }, 800);
