@@ -4,3 +4,12 @@
 form {
     padding-top: 20px;
 }
+#chrono {
+  height: 30px;
+  overflow: hidden;
+  padding: 5px;
+  text-align: center;
+  width: 120px;
+  margin-top: 2%;
+  margin-left: 2%;
+}
