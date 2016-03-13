@@ -63,19 +63,29 @@
 
 				// Add and custom icon for the marker
 				var myIcon = L.icon({
-					iconUrl : 'img/flag-red.png',
-					iconSize : [33, 45],
-          /*
-					 popupAnchor: [-3, -76],
-					 shadowUrl: 'my-icon-ombre-flag.png',
-					 shadowRetinaUrl: 'my-icon-shadow@2x.png',
-					 shadowSize: [68, 95],
-					 shadowAnchor: [22, 94]
-          */
+					iconUrl : 'img/pas.png',
+					iconSize : [40, 50],
 				});
 
 				// Add a marker to the map
 				var marker = L.marker([43.205400, 2.362688],{icon:myIcon}).addTo(map);
+
+        var myIcon2 = L.icon({
+          iconUrl : 'img/flag-vert.png',
+          iconSize : [90, 90],
+        });
+
+        // Add a marker to the map
+        var marker2 = L.marker([43.205400, 2.362688],{icon:myIcon2}).addTo(map);
+
+        var myIcon3 = L.icon({
+          iconUrl : 'img/flag-red.png',
+          iconSize : [90, 90],
+        });
+
+        // Add a marker to the map
+        var marker2 = L.marker([43.207875, 2.364369],{icon:myIcon3}).addTo(map);
+
 				var lat = "43.205663";
 				var long = "2.362846";
 
