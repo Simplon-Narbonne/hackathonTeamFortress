@@ -1,3 +1,3 @@
 $("#logo").click(function(){
-  window.location.replace("login.html");
+  //window.location.replace("login.html");
 });
