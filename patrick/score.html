@@ -16,9 +16,6 @@
     <link rel="stylesheet" href="./css/ratchet.css">
     <link rel="stylesheet" href="./css/style.css">
 
-    <!-- Include the compiled Ratchet JS -->
-    <script src="./js/ratchet.js"></script>
-    <script src="./js/ratchet.min.js"></script>
   </head>
   <body>
       <header id="header" class="bar bar-nav fond tac">
@@ -30,12 +27,12 @@
 
                   <div id="score" class="tac ma abi">
                       <img src="./img/score.png" alt="">
-
+                      <div class="liste_scores"></div>
                   </div>
     </div><!--end options-->
 </div><!--end content-->
 
-
+<script src="./js/jquery.js" charset="utf-8"></script>
 <script type="text/javascript">
 //centrage div:
 $(document).ready(function() {
@@ -54,7 +51,21 @@ $(window).load(function() {
   $(window).resize();
 });
 
+</script>
+<script>
+  $(document).ready(function() {
+    $.ajax({
+       url : 'http://iness.simplon.co/crud.php?page=list_scores',
+       type : 'GET', // Le type de la requête HTTP, ici devenu POST
+       //data : 'pseudo_session=' + pseudo_session , // On fait passer nos variables, exactement comme en GET, au script more_com.php
+       dataType : 'html',
+       success : function(code_html, statut){ // code_html contient le HTML renvoyé
+         console.log('les scores arrivent');
+         $(".liste_scores").html(code_html);
 
+       }
+    });
+  })
 </script>
   </body>
 

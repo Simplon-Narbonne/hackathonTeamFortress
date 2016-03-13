@@ -16,8 +16,11 @@ function move(marker){
     var newLatLng = new L.LatLng(lat, long);
     marker.setLatLng(newLatLng);
     i = i+1;
+
     if(i == checkpoint_number){
       clearTimeout(automate);
+      // Scores
+      window.location.replace("score.html");
     }
 
   }, 800);
