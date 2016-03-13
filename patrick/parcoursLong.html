@@ -19,23 +19,31 @@
     <style>
 			#map {
 				height: 100%;
-        margin: 35px 0 0;
 			}
 		</style>
 
+    <!-- Include the compiled Ratchet JS -->
     <script src="leaflet/leaflet.js"></script>
     <script language="javascript">
 			function init() {
 				var map = new L.Map('map', {
 					center : [43.206454, 2.364104],
-					zoom : 16
+          zoomControl: false,
+					zoom : 17
 				});
+
+        // Disable drag and zoom handlers.
+        map.doubleClickZoom.disable();
+        map.scrollWheelZoom.disable();
+        map.keyboard.disable();
+
 				L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 					attribution : '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
-					maxZoom : 30
+					maxZoom : 17
 				}).addTo(map);
 				map.attributionControl.setPrefix('');
 				// Don't show the 'Powered by Leaflet' text.
+
 
 				var tracks = [
 				new Array(43.206567, 2.365934),
@@ -110,38 +118,51 @@
 
 				// Add and custom icon for the marker
 				var myIcon = L.icon({
-					iconUrl : 'images/pas.png',
-					iconSize : [33, 45],
-					/*
-					 popupAnchor: [-3, -76],
-					 shadowUrl: 'my-icon-shadow.png',
-					 shadowRetinaUrl: 'my-icon-shadow@2x.png',
-					 shadowSize: [68, 95],
-					 shadowAnchor: [22, 94]
-					 */
+					iconUrl : 'img/pas.png',
+					iconSize : [40, 50],
 				});
 
 				// Add a marker to the map
-				var marker = L.marker([43.205400, 2.362688]).addTo(map);
+				var marker = L.marker([43.205400, 2.362688],{icon:myIcon}).addTo(map);
+
+        var myIcon2 = L.icon({
+          iconUrl : 'img/flag-vert.png',
+          iconSize : [90, 90],
+        });
+
+        // Add a marker to the map
+        var marker2 = L.marker([43.206567, 2.3659341],{icon:myIcon2}).addTo(map);
+
+        var myIcon3 = L.icon({
+          iconUrl : 'img/flag-red.png',
+          iconSize : [90, 90],
+        });
+
+        // Add a marker to the map
+        var marker2 = L.marker([43.206912, 2.365002],{icon:myIcon3}).addTo(map);
+
 				var lat = "43.205663";
 				var long = "2.362846";
 
 				// Runner Simulation
 				move(marker);
-
+chrono();
 			}
 		</script>
   </head>
   <body onLoad="javascript:init();">
     <header id="header" class="bar bar-nav fond tac">
       <a  href="index.html" data-transition="fade"><img id="nom" src="./img/nomblanc.png" alt="" /></a>
-      <a href="#menu-haut"><span class="icon icon icon-bars pull-right "></span></a>
+      <a href="parcours.html"><span class="icon icon icon-bars pull-right "></span></a>
     </header>
 
 
 <div class="content ">
 
-  <div id="map"></div>
+  <div id="map">
+    <div id="chrono">
+    </div>
+  </div>
 
   <script src="./js/jquery.js" charset="utf-8"></script>
   <script src="js/move_runner2.js"></script>
@@ -175,3 +196,4 @@ $(window).load(function() {
   </body>
 
 </html>
+
