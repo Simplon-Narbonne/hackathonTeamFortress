@@ -9,3 +9,18 @@ console.log(pseudo_session);
      dataType : 'html'
   });
 });
+
+/*function charger(){
+
+var meilleurTemps = $('#scores p:first').attr('temps_session'); // on récupère le meilleur temps
+
+$.ajax({
+  url : "crud.php?temps_sesions=" + meilleurTemps // on passe le meilleur temps au fichier de chargement
+  type : GET,
+  success : function(html){
+  $('#scores').prepend(html);
+  }
+});
+
+charger();
+*/
