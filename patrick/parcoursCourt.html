@@ -23,8 +23,6 @@
 		</style>
 
     <!-- Include the compiled Ratchet JS -->
-    <script src="./js/ratchet.js"></script>
-    <script src="./js/ratchet.min.js"></script>
     <script src="leaflet/leaflet.js"></script>
     <script language="javascript">
 			function init() {
@@ -65,19 +63,19 @@
 
 				// Add and custom icon for the marker
 				var myIcon = L.icon({
-					iconUrl : 'images/pas.png',
+					iconUrl : 'img/flag-red.png',
 					iconSize : [33, 45],
-					/*
+          /*
 					 popupAnchor: [-3, -76],
-					 shadowUrl: 'my-icon-shadow.png',
+					 shadowUrl: 'my-icon-ombre-flag.png',
 					 shadowRetinaUrl: 'my-icon-shadow@2x.png',
 					 shadowSize: [68, 95],
 					 shadowAnchor: [22, 94]
-					 */
+          */
 				});
 
 				// Add a marker to the map
-				var marker = L.marker([43.205400, 2.362688]).addTo(map);
+				var marker = L.marker([43.205400, 2.362688],{icon:myIcon}).addTo(map);
 				var lat = "43.205663";
 				var long = "2.362846";
 
@@ -90,7 +88,7 @@
   <body onLoad="javascript:init();">
     <header id="header" class="bar bar-nav fond tac">
       <a  href="index.html" data-transition="fade"><img id="nom" src="./img/nomblanc.png" alt="" /></a>
-      <a href="#menu-haut"><span class="icon icon icon-bars pull-right "></span></a>
+      <a href="index.html"><span class="icon icon icon-bars pull-right "></span></a>
     </header>
 
 
