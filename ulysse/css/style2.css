@@ -1,0 +1,28 @@
+
+.score{
+  width: 75%;
+  margin: auto auto auto auto;
+  border:2px  solid ;
+  border-radius: 30px;
+}
+
+.score img{
+  width: 100%;
+}
+
+.score h3 {
+  text-align: center;
+}
+
+.score_final{
+  background-color: rgb(61, 68, 119);
+  color:white;
+  height: 1.75em;
+  text-align: center;
+
+}
+
+.score_final h4{
+
+
+}
