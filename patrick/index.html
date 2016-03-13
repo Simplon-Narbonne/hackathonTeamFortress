@@ -24,49 +24,49 @@
     <header id="header" class="bar bar-nav fondb tac">
       <img id="nom" src="./img/nom.png" alt="" />
     </header>
-<div class="content ">
-        <div id="intro" class="fond">
-                <div id="menu-haut" class="popover">
-                    <header class="bar bar-nav ">
-                      <h1 class="title coltxt">MENU</h1>
-                    </header>
-                      <nav class="table-view ">
-                        <a href="index.html"><li class="table-view-cell coltxt">Accueil</li></a>
-                        <a href="#"><li class="table-view-cell coltxt">Aide</li></a>
-                            </nav>
-                      </div >
-                      <div>
-                          <a  href="login.html" data-transition="fade"><img id="logo"  class="abi"src="./img/bouclier.png" alt=""></a>
-                      </div>
-              </div><!--end menu haut-->
-        </div>
+    <div class="content ">
+            <div id="intro" class="fond">
+                    <div id="menu-haut" class="popover">
+                        <header class="bar bar-nav ">
+                          <h1 class="title coltxt">MENU</h1>
+                        </header>
+                          <nav class="table-view ">
+                            <a href="index.html"><li class="table-view-cell coltxt">Accueil</li></a>
+                            <a href="#"><li class="table-view-cell coltxt">Aide</li></a>
+                                </nav>
+                          </div >
+                          <div>
+                              <a  href="login.html" data-transition="fade"><img id="logo"  class="abi"src="./img/bouclier.png" alt=""></a>
+                          </div>
+                  </div><!--end menu haut-->
+            </div>
 
-        <script src="./js/jquery.js" charset="utf-8"></script>
-        <script src="js/move_runner.js"></script>
-        <script src="js/chrono.js"></script>
-        <script src="js/checkpoint.js"></script>
-        <script src="js/crud.js"></script>
+            <script src="./js/jquery.js" charset="utf-8"></script>
+            <script src="js/move_runner.js"></script>
+            <script src="js/chrono.js"></script>
+            <script src="js/checkpoint.js"></script>
+            <script src="js/crud.js"></script>
 
-</div>
-<script type="text/javascript">
-//centrage div:
-$(document).ready(function() {
-// $(window).resize() est appelée chaque fois que la fenêtre est redimensionnée par l'utilisateur.
-  $(window).resize(function() {
-    $(".middle").css({
-      position:'absolute',
-      left:($(window).width() - $(".middle").outerWidth()) / 2,
-      top:($(window).height() - $(".middle").outerHeight()) / 2
+    </div>
+    <script type="text/javascript">
+    //centrage div:
+    $(document).ready(function() {
+    // $(window).resize() est appelée chaque fois que la fenêtre est redimensionnée par l'utilisateur.
+      $(window).resize(function() {
+        $(".middle").css({
+          position:'absolute',
+          left:($(window).width() - $(".middle").outerWidth()) / 2,
+          top:($(window).height() - $(".middle").outerHeight()) / 2
+        });
+      });
     });
-  });
-});
 
-$(window).load(function() {
-  // au chargement complet de la page, la fonction resize() est appelée une fois pour initialiser le centrage.
-  $(window).resize();
-});
+    $(window).load(function() {
+      // au chargement complet de la page, la fonction resize() est appelée une fois pour initialiser le centrage.
+      $(window).resize();
+    });
 
-</script>
+    </script>
   </body>
 
 </html>
