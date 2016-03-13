@@ -40,6 +40,8 @@ function maPosition(position) {
 		// ajax a faire pour stocker le temp et afficher le classement
 	}
 }
+/*
 var refresh = setInterval(function() {
 	navigator.geolocation.getCurrentPosition(maPosition);
 }, 1000); 
+*/
