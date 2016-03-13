@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:800" rel="stylesheet" type="text/css" >
+
+    <!-- Include the compiled Ratchet CSS -->
+    <link rel="stylesheet" href="./css/ratchet.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style2.css">
+    <link rel="stylesheet" href="leaflet/leaflet.css" />
+    <style>
+			#map {
+				height: 100%;
+			}
+
+      #logoVita1 {
+        width : 150px;
+        height: auto;
+        margin-left: 28%;
+        margin-bottom: 5%;
+      }
+
+      #logoVita2 {
+        width : 200px;
+        height: auto;
+        margin-left: 22%;
+        margin-bottom: 5%;
+      }
+
+      #logoVita3 {
+        width : 150px;
+        height: auto;
+        margin-left: 25%;
+        margin-bottom: 5%;
+      }
+
+      .rep {
+        color : #28225C;
+      }
+
+      #vita1, #vita2, #vita3 {
+        width: max;
+        text-align: justify;
+        margin : 5%;
+      }
+
+      #vita1 h2, #vita2 h2, #vita3 h2 {
+        text-align: center;
+        margin-top : 5%;
+        color: #5A5A5A;
+      }
+
+
+		</style>
+
+
+  </head>
+  <body onLoad="javascript:init();">
+    <header id="header" class="bar bar-nav fond tac">
+      <a  href="index.html" data-transition="fade"><img id="nom" src="./img/nomblanc.png" alt="" /></a>
+      <a href="parcours.html"><span class="icon icon icon-bars pull-right "></span></a>
+    </header>
+
+
+<div class="content ">
+
+  <div id="vita1">
+    <h2>Jumping Jack</h2>
+    <img id="logoVita1" class="logosVita" src="./img/jumpingjack.jpeg" alt="logo vita1" />
+    <p>
+        Saut en écartant les jambes et rejoignant les mains au-dessus de la tête en les montant latéralement, suivi d'un autre pour le retour en position jambes serrées et bras ballants. <br /><span class="rep">10 répétitions</span>.
+    </p>
+    <hr />
+  </div>
+
+  <div id="vita2">
+    <h2>Burpees</h2>
+    <img id="logoVita2" class="logosVita" src="./img/Burpees.jpg" alt="logo vita2" />
+    <p>
+      Posez vos mains devant vous au sol en position de squat. Lancez ensuite vos pieds vers l’arrière. Essayez d'aligner la tête les fessiers et les jambes pour faire un bon gainage. Faites une pompe. Ramenez vos pieds par devant de sorte à vous retrouver de nouveau dans la position du Squat, puis sautez en haut. <br /><span class="rep">5 répétitions</span>.
+    </p>
+    <hr />
+  </div>
+
+  <div id="vita3">
+    <h2>Chien</h2>
+    <img id="logoVita3" class="logosVita" src="./img/chien.jpg" alt="logo vita3" />
+    <p>
+      Positionnez-vous à quatre pattes. Les mains sont à posées à plat (les doigts sont ouverts) bien parallèles, dans le prolongement des épaules. Les pieds sont écartés de la largeur du bassin, dans l’alignement des mains. Mettez-vous sur la pointe des pieds puis lentement, poussez votre bassin vers le haut en tendant les bras et les jambes. <br /><span class="rep">3 répétions</span>.
+    </p>
+    <hr />
+  </div>
+
+
+  <script src="./js/jquery.js" charset="utf-8"></script>
+  <script src="js/move_runner.js"></script>
+  <script src="js/chrono.js"></script>
+  <script src="js/checkpoint.js"></script>
+  <script src="js/crud.js"></script>
+
+</div><!--end content-->
+
+
+<script type="text/javascript">
+//centrage div:
+$(document).ready(function() {
+// $(window).resize() est appelée chaque fois que la fenêtre est redimensionnée par l'utilisateur.
+  $(window).resize(function() {
+    $(".middle").css({
+      position:'absolute',
+      left:($(window).width() - $(".middle").outerWidth()) / 2,
+      top:($(window).height() - $(".middle").outerHeight()) / 2
+    });
+  });
+});
+
+$(window).load(function() {
+  // au chargement complet de la page, la fonction resize() est appelée une fois pour initialiser le centrage.
+  $(window).resize();
+});
+
+</script>
+
+  </body>
+
+</html>
