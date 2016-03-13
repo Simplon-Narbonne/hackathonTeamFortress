@@ -18,7 +18,6 @@ function chrono() {
 	}//si les secondes > 59, on les réinitialise à 0 et on incrémente les minutes de 1
 
 	document.getElementById('chrono').innerHTML = minu+" : "+secon+" : "+centi;
-//	document.forsec.chrono.innerHTML = minu+" : "+secon+" : "+minu;
 	compte = setTimeout('chrono()', 100);
 	//la fonction est relancée tous les 10° de secondes
 }
