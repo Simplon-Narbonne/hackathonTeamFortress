@@ -16,9 +16,6 @@
     <link rel="stylesheet" href="./css/ratchet.css">
     <link rel="stylesheet" href="./css/style.css">
 
-    <!-- Include the compiled Ratchet JS -->
-    <script src="./js/ratchet.js"></script>
-    <script src="./js/ratchet.min.js"></script>
   </head>
   <body>
     <header id="header" class="bar bar-nav fond tac">
@@ -28,31 +25,31 @@
 
 
     <div class="content ">
-      
+
 
     </div><!--end content-->
 
 
 
-<script type="text/javascript">
-//centrage div:
-$(document).ready(function() {
-// $(window).resize() est appelée chaque fois que la fenêtre est redimensionnée par l'utilisateur.
-  $(window).resize(function() {
-    $(".middle").css({
-      position:'absolute',
-      left:($(window).width() - $(".middle").outerWidth()) / 2,
-      top:($(window).height() - $(".middle").outerHeight()) / 2
+    <script type="text/javascript">
+    //centrage div:
+    $(document).ready(function() {
+    // $(window).resize() est appelée chaque fois que la fenêtre est redimensionnée par l'utilisateur.
+      $(window).resize(function() {
+        $(".middle").css({
+          position:'absolute',
+          left:($(window).width() - $(".middle").outerWidth()) / 2,
+          top:($(window).height() - $(".middle").outerHeight()) / 2
+        });
+      });
     });
-  });
-});
 
-$(window).load(function() {
-  // au chargement complet de la page, la fonction resize() est appelée une fois pour initialiser le centrage.
-  $(window).resize();
-});
+    $(window).load(function() {
+      // au chargement complet de la page, la fonction resize() est appelée une fois pour initialiser le centrage.
+      $(window).resize();
+    });
 
-</script>
+    </script>
   </body>
 
 </html>
