@@ -222,21 +222,24 @@ color: #fff;
   border: none;
   color: #fff;
 }
-#pub{
+#pub img{
   width: 90%;
-  height: 200px;
-  border:1px solid #2;
-  margin-top: 50px;
-  background-image: url(../img/pub.jpg);
-  background-repeat: no-repeat;
-  -webkit-background-size: contain;
-  background-size: contain;
-  background-position: center;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+  margin: 10px 0;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+#annonce img{
+  width: 90%;
+  margin-top: 60px;
+}
+#score{
+  margin-top: 80px;
+}
+#score img{
+  width: 50%;
 }
 /*============================== Animation ==============*/
 .abi {
-  animation-duration: .5s;
+  animation-duration: 0.8s;
   animation-name: bounceIn;
   -moz-transform-origin: 50% 50%;
 }
