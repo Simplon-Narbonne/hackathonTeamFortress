@@ -62,6 +62,17 @@ function move(marker){
     var newLatLng = new L.LatLng(lat, long);
     marker.setLatLng(newLatLng);
     i = i+1;
+
+    if(i==31){
+      console.log('Vous etes à la basilique');
+      $('.infotourist').show();
+    }
+
+    if(i==32){
+      console.log('Vous etes à la basilique');
+      $('.infotourist').hide();
+    }
+
     if(i == checkpoint_number){
       clearTimeout(automate);
       // Scores

@@ -159,11 +159,14 @@ chrono();
 
 
 <div class="content ">
-
+  <div class="infotourist">
+    La basilique a été construite entre le IXe siècle et le XIVe siècle. Elle est un cas assez unique de coexistence du style roman et gothique
+  </div>
   <div id="map">
     <div id="chrono">
     </div>
   </div>
+
 
   <script src="./js/jquery.js" charset="utf-8"></script>
   <script src="js/move_runner2.js"></script>
@@ -175,6 +178,11 @@ chrono();
 
 
 <script type="text/javascript">
+
+$(document).ready(function() {
+  $('.infotourist').hide();
+})
+
 //centrage div:
 $(document).ready(function() {
 // $(window).resize() est appelée chaque fois que la fenêtre est redimensionnée par l'utilisateur.
@@ -197,4 +205,3 @@ $(window).load(function() {
   </body>
 
 </html>
-
